@@ -9,6 +9,9 @@ import Rain from "../resources/rain.png";
 import Thunderstorm from "../resources/thunderstorm.png";
 import Haze from "../resources/haze.png";
 import Clear from "../resources/clear-sky.png";
+import Wind from "./wind";
+import Humidity from "./humidity";
+import Feels from "./feels_like";
 
 const WeatherApp = () => {
   const [weatherData, setWeatherData] = useState(null);
@@ -131,16 +134,31 @@ const WeatherApp = () => {
           {weatherData && (
             <div className="weather-main-container white-color">
               <div className="weather-container">
-                <h2>{weatherData.name}</h2>
-                <img
-                  width="100"
-                  height="100"
-                  src={getWeatherImgUrl(weatherData.weather[0]["main"])}
-                />
-                <p className="weather-type">{weatherData.weather[0]["main"]}</p>
-                <p className="weather-temprature">{weatherData.main.temp}°C</p>
-                <p>Humidity: {weatherData.main.humidity}%</p>
-                <p>Description: {weatherData.weather[0].description}</p>
+                <div className="left-section">
+                  <div class="humidity-container card">
+                    <Humidity speed={weatherData.main.humidity}></Humidity>
+                    <Feels speed={weatherData.main.feels_like}></Feels>
+                  </div>
+                </div>
+                <div className="center-section">
+                  <h2>{weatherData.name}</h2>
+                  <img
+                    width="100"
+                    height="100"
+                    src={getWeatherImgUrl(weatherData.weather[0]["main"])}
+                  />
+                  <p className="weather-type">
+                    {weatherData.weather[0]["main"]}
+                  </p>
+                  <p className="weather-temprature">
+                    {weatherData.main.temp}°C
+                  </p>
+                </div>
+                <div className="right-section">
+                  <div class="humidity-container card">
+                    <Wind speed={weatherData.wind.speed}></Wind>
+                  </div>
+                </div>
               </div>
             </div>
           )}

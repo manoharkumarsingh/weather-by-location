@@ -13,7 +13,7 @@ code {
 }
 
 .App {
-  background-image: url("components/resources/image1.png");
+  background-image: url("components/resources/image2.jpg");
   height: 100vh;
 }
 p {
@@ -28,20 +28,23 @@ p {
 }
 .main-sub-container {
   background-color: #2c3539;
-  width: 300px;
   padding: 20px;
   display: flex;
-  height: 500px;
   border-radius: 10px;
   justify-content: center;
+  background-image: url("components/resources/image1.jpg");
 }
 
 .white-color {
   color: white;
+  text-align: center;
 }
 
 .weather-container {
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 20px;
 }
 
 .weather-type {
@@ -54,4 +57,88 @@ p {
   margin-top: 20px;
   font-size: 2.5rem;
   font-weight: 600;
+}
+
+.label-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card {
+  transition: 0.3s;
+  padding: 20px;
+  border-radius: 17px;
+}
+
+.center-section {
+  text-align: center;
+}
+
+.react-select-container {
+  display: flex;
+  justify-content: center;
+}
+
+/**Wind**/
+.highcharts-figure,
+.highcharts-data-table table {
+  width: 205px;
+  margin: 1em auto;
+}
+
+.highcharts-data-table table {
+  font-family: Verdana, sans-serif;
+  border-collapse: collapse;
+  border: 1px solid #ebebeb;
+  margin: 10px auto;
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+.highcharts-data-table caption {
+  padding: 1em 0;
+  font-size: 1.2em;
+  color: #555;
+}
+
+.highcharts-data-table th {
+  font-weight: 600;
+  padding: 0.5em;
+}
+
+.highcharts-data-table td,
+.highcharts-data-table th,
+.highcharts-data-table caption {
+  padding: 0.5em;
+}
+
+.highcharts-data-table thead tr,
+.highcharts-data-table tr:nth-child(even) {
+  background: #f8f8f8;
+}
+
+.highcharts-data-table tr:hover {
+  background: #f1f7ff;
+}
+/**End*/
+
+.humidity-container div {
+  border-radius: 20px;
+}
+
+.highcharts-figure .chart-container {
+  height: 160px;
+}
+
+.highcharts-axis-title {
+  font-size: 1.2rem !important;
+  font-weight: bold;
+  fill: unset !important;
+}
+.highcharts-figure.highcharts-figure-feels-like .chart-container {
+  height: 180px !important;
+}
+input:focus {
+  width: 50%;
 }
